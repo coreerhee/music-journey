@@ -6,6 +6,7 @@ import {locations} from "../data/locations";
 import type { MusicLocation } from "../types/music";
 import MusicMarker from "./MusicMarker";
 import MusicCard from "./MusicCard";
+import { markerIcon } from "../utils/markerIcon";
 
 const noLocations: string[] = [];
 const initialCenter: [number, number] = [25, 115];
@@ -65,7 +66,7 @@ export default function MusicMap({ guided = false, summaryIds = noLocations, onG
         />
         {locations.map((location) => (
           guided && !summaryIds.includes(location.id) ? (
-            <Marker key={location.id} position={[location.latitude, location.longitude]} />
+            <Marker key={location.id} icon={markerIcon} position={[location.latitude, location.longitude]} />
           ) : <MusicMarker
             key={location.id}
             location={location}

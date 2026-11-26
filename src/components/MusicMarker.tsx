@@ -2,6 +2,7 @@ import {Marker, Popup} from "react-leaflet";
 import { useEffect, useRef } from "react";
 import type { Marker as LeafletMarker } from "leaflet";
 import MusicLocationSummary from "./MusicLocationSummary";
+import { markerIcon } from "../utils/markerIcon";
 
 import type { MusicLocation } from "../types/music";
 
@@ -19,7 +20,7 @@ export default function MusicMarker({location, onSelect, showOnMap = false}: Mus
     }, [showOnMap]);
 
     return (
-        <Marker ref={markerRef} position={[location.latitude, location.longitude]}>
+        <Marker ref={markerRef} icon={markerIcon} position={[location.latitude, location.longitude]}>
             <Popup
                 autoClose={!showOnMap}
                 closeOnClick={!showOnMap}
