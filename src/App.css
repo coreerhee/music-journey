@@ -1,0 +1,94 @@
+.home-screen {
+  min-height: 100svh; display: flex; flex-direction: column;
+  justify-content: center; align-items: center; text-align: center;
+  padding: 48px 24px;
+}
+.home-screen h3 { margin-top: 20px; font-weight: 400; color: #666; font-size: clamp(1rem, 2vw, 1.25rem); }
+.home-screen > div { display: flex; gap: 12px; margin-top: 44px; flex-wrap: wrap; justify-content: center; }
+.home-screen button { min-width: 180px; min-height: 56px; }
+.home-screen button:last-child, .tour-controls > button, .resume-tour {
+  background: #252525; border-color: #252525; color: white;
+}
+.home-screen button:last-child:hover, .tour-controls > button:hover, .resume-tour:hover { background: #444; border-color: #444; }
+.explore-screen { width: 100%; max-width: 1440px; margin: auto; position: relative; padding: 0 24px 24px; }
+.explore-header { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px; min-height: 96px; padding: 20px 0; }
+.explore-header > button { justify-self: start; }
+.explore-header h2 { font-size: 1.25rem; text-align: center; }
+.music-map { width: 100%; height: calc(100svh - 120px); min-height: 380px; border: 1px solid var(--border); border-radius: 12px; }
+.resume-tour { position: absolute; bottom: 48px; left: 50%; transform: translateX(-50%); z-index: 1000; box-shadow: 0 4px 16px #0003; white-space: nowrap; }
+/* Shared modal dimensions keep the map visible around the cards. */
+dialog.music-card, .tour-popup {
+  width: min(800px, calc(100% - 40px)); max-height: calc(100dvh - 64px);
+  margin: auto; padding: 0; border: 1px solid #d2d2d2; border-radius: 14px;
+  color: var(--text); background: var(--bg); box-shadow: 0 24px 80px #0003;
+  overflow: auto;
+}
+dialog::backdrop { background: rgb(0 0 0 / 28%); }
+dialog.music-card[open], .tour-popup[open] { display: flex; flex-direction: column; }
+.tour-popup > header, .music-card-header {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 20px;
+  padding: 24px 32px; border-bottom: 1px solid var(--border); background: white;
+}
+.tour-popup > header, .music-card-header { flex-shrink: 0; position: sticky; top: 0; z-index: 1; }
+.tour-popup > header h2 { font-size: 1.125rem; align-self: center; }
+.tour-popup > header button, .music-card-header button { flex-shrink: 0; }
+.tour-popup-body { min-height: 0; overflow-y: auto; padding: 32px; overscroll-behavior: contain; }
+.tour-popup-body > article > h3 { font-size: 1.5rem; margin-bottom: 16px; }
+.tour-popup-body > article > p { line-height: 1.85; }
+.tour-popup-body > article > section { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--border); }
+.tour-popup-body h4 { margin-bottom: 10px; }
+dialog.music-card > footer, .tour-popup > footer { flex-shrink: 0; padding: 16px 32px; border-top: 1px solid var(--border); }
+.tour-controls { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; }
+.tour-controls > button { justify-self: end; min-width: 92px; }
+.tour-controls > div > button { min-width: 92px; }
+.tour-controls > span { color: #707070; font-size: .875rem; font-variant-numeric: tabular-nums; }
+.music-card-body { min-height: 0; overflow-y: auto; padding: 0 32px; overscroll-behavior: contain; }
+.music-card section { margin: 0; padding: 24px 0; border-bottom: 1px solid var(--border); }
+.music-card section:last-child { border-bottom: 0; }
+.music-card section h3 { margin-bottom: 12px; }
+.music-card section h4 { margin-top: 24px; margin-bottom: 8px; }
+.music-card p + p { margin-top: 6px; }
+.music-card-comparison { margin-top: 8px; color: #666; font-size: .875rem; line-height: 1.6; }
+.music-card-image { margin: 24px 0 0; }
+.music-card-image img { display: block; width: 100%; max-height: 420px; object-fit: contain; border-radius: 8px; }
+.music-card-image figcaption { margin-top: 8px; color: #666; font-size: .875rem; line-height: 1.6; }
+.music-card-text { white-space: pre-wrap; line-height: 1.85; word-break: keep-all; overflow-wrap: anywhere; }
+.music-card a { overflow-wrap: anywhere; }
+.music-card ul { margin: 8px 0 0; padding-left: 20px; }
+.music-card li + li { margin-top: 10px; }
+.music-card-inline .music-card-header { padding: 0 0 24px; }
+.music-card-inline section { margin: 0; }
+.leaflet-popup-content, .leaflet-tooltip { font-family: inherit; font-size: .875rem; line-height: 1.65; }
+.leaflet-popup-content { min-width: 200px; }
+.leaflet-popup-content strong, .leaflet-tooltip strong { display: block; font-size: 1rem; }
+.leaflet-popup-content p, .leaflet-tooltip p { margin: 8px 0 12px; }
+.leaflet-popup-content button { display: flex; width: 100%; margin-top: 16px; }
+.leaflet-tooltip { white-space: normal; width: 240px; padding: 14px 16px; border-radius: 8px; }
+@media (max-width: 600px) {
+  .explore-screen { padding: 0 12px 12px; }
+  .explore-header { min-height: 80px; gap: 12px; padding: 12px 0; }
+  .explore-header h2 { font-size: 1.0625rem; }
+  .explore-header { grid-template-columns: 1fr auto 1fr; gap: 8px; }
+  .explore-header button { font-size: .875rem; }
+  .explore-header button { padding: 10px 12px; }
+  .music-map { height: calc(100svh - 92px); border-radius: 8px; }
+  dialog.music-card, .tour-popup { width: calc(100% - 20px); max-height: calc(100dvh - 24px); border-radius: 10px; }
+  .tour-popup > header, .music-card-header { padding: 20px; gap: 12px; }
+  .tour-popup > header { flex-wrap: wrap; }
+  .tour-popup-body { padding: 20px; }
+  dialog.music-card > footer, .tour-popup > footer { padding: 14px 20px; }
+  .music-card-body { padding-inline: 20px; }
+  .music-card-inline section { margin-inline: 0; }
+  .music-card-header h2, .tour-popup-body > article > h3 { font-size: 1.25rem; }
+  .resume-tour { bottom: 32px; }
+  .leaflet-tooltip { width: 180px; }
+}
+
+/* Leaflet supplies its own anchor colors; keep all map links consistent. */
+.leaflet-container a, .leaflet-container a:visited { color: #175bc4; }
+.leaflet-container a:hover { color: #104493; }
+@media (max-width: 400px) {
+  .explore-header { grid-template-columns: 1fr 1fr; }
+  .explore-header h2 { grid-column: 1 / -1; grid-row: 1; }
+  .explore-header > button { grid-row: 2; }
+}

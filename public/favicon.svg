@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- 둥근 배경 -->
+  <rect width="64" height="64" rx="14" fill="#252525"/>
+
+  <!-- 음표 기둥과 꼬리 -->
+  <path
+    d="M38 44V15C38 24 50 22 49 33"
+    fill="none"
+    stroke="#fff"
+    stroke-width="5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- 음표 머리 -->
+  <ellipse
+    cx="30" cy="45"
+    rx="10" ry="7"
+    transform="rotate(-20 30 45)"
+    fill="#fff"
+  />
+</svg>
