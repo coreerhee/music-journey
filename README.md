@@ -1,32 +1,10 @@
-# React + TypeScript + Vite
+# 동양음악 감상 지도
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+아시아 여섯 나라의 전통 음악을 지도에서 만나고, 음악 속에서 사람의 목소리가 어떤 역할을 하는지 살펴보는 웹 앱입니다. 「동양음악의 이해」 과제를 위해 제작했습니다.
 
-Currently, two official plugins are available:
+중국의 경극, 일본의 노, 한국의 판소리, 인도의 카르나틱, 인도네시아의 케착, 몽골의 흐미를 소개합니다. 나라별 카드에서 장소와 사진, 음악적 특징, 역사·문화적 맥락, 감상 영상과 감상평을 확인할 수 있습니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **자유롭게 탐방**: 지도에서 관심 있는 나라의 마커를 선택해 음악을 살펴봅니다.
+- **순서대로 탐방**: 중국과 일본, 한국과 인도, 인도네시아와 몽골을 차례로 비교하며 목소리의 표현과 역할을 감상합니다.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+영상 링크는 각 음악의 주요 감상 구간부터 재생되도록 연결되어 있습니다.
